@@ -4,6 +4,11 @@ function sevenSeg(x_, y_, w_, h_, s_) {
   this.y = y_;
   this.width = w_;
   this.height = h_;
+  // this.pos = createVector(this.x, this.y)
+  // this.vel = createVector(0, 0);
+  // this.acc = createVector(0, 0);
+  // this.target = createVector(this.x, this.y)
+
 
   this.offsets = [
     [this.height, 0, 0],
