@@ -49,10 +49,27 @@ function Display(x_, y_, w_, h_, b_, numSegs_, startNum_) {
   }
 
   this.setValues = function(num) {
-    var j = 0;
-    for (var i = this.numSegs - 1; i >= 0; i--) {
-      this.digets[i].setArrayIndex((num >> (4 * j)) & 0xf);
-      j++;
-    }
+    var d = new Date();
+    var h = d.getHours();
+    var m = d.getMinutes();
+    var s = d.getSeconds();
+    h1 = floor(h / 10)
+    h2 = h % 10
+    m1 = floor(m / 10)
+    m2 = m % 10
+    s1 = floor(s / 10);
+    s2 = s % 10;
+    this.digets[0].setArrayIndex(h1)
+    this.digets[1].setArrayIndex(h2)
+    this.digets[2].setArrayIndex(m1)
+    this.digets[3].setArrayIndex(m2)
+    this.digets[4].setArrayIndex(s1)
+    this.digets[5].setArrayIndex(s2)
+
+    // var j = 0;
+    // for (var i = this.numSegs - 1; i >= 0; i--) {
+    //   this.digets[i].setArrayIndex((num >> (4 * j)) & 0xf);
+    //   j++;
+    // }
   }
 }

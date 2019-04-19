@@ -2,17 +2,16 @@
 // https://p5js.org/reference/
 
 var display;
-var x = 100;
-var y = 100;
+var x = 20;
+var y = 150;
 var segWidth = 50;
 var segHeight = 10;
 var buffer = 20;
-var displayNum = 4;
-var startNum = 0x00;
+var displayNum = 6;
+var startNum = Math.floor(Date.now() / 1000);
 
 function setup() {
   createCanvas(600, 500);
-  frameRate(10);
   display = new Display(
     x,
     y,
@@ -20,12 +19,13 @@ function setup() {
     segHeight,
     buffer,
     displayNum,
-    startNum);
+    startNum
+  );
 }
 
 function draw() {
   background(151);
   display.show();
   display.showRect();
-  display.incValue();
+  display.setValues();
 }
